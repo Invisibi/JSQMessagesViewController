@@ -149,6 +149,25 @@ forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
                       atIndexPath:indexPath];
 }
 
+-(void)messagesCollectionViewCellDidTapSelfLikeButton:(JSQMessagesCollectionViewCell *)cell
+{
+    NSIndexPath *indexPath = [self indexPathForCell:cell];
+    if (indexPath == nil) {
+        return;
+    }
+    
+    [self.delegate collectionView:self didTapSelfLike: cell.selfLikeButton atIndexPath: indexPath];
+}
+
+-(void)messagesCollectionViewCellDidTapToalLikesButton:(JSQMessagesCollectionViewCell *)cell
+{
+    NSIndexPath *indexPath = [self indexPathForCell:cell];
+    if (indexPath == nil) {
+        return;
+    }
+    [self.delegate collectionView:self didTapTotalLikes: cell.totalLikesButton atIndexPath: indexPath];
+}
+
 - (void)messagesCollectionViewCellDidTapMessageBubble:(JSQMessagesCollectionViewCell *)cell
 {
     NSIndexPath *indexPath = [self indexPathForCell:cell];

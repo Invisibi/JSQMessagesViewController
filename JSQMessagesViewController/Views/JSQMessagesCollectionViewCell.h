@@ -41,6 +41,20 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)messagesCollectionViewCellDidTapAvatar:(JSQMessagesCollectionViewCell *)cell;
 
 /**
+ *  Tells the delegate that the selfLikeButton of the cell has been tapped.
+ *
+ *  @param cell The cell that received the tap touch event.
+ */
+- (void)messagesCollectionViewCellDidTapSelfLikeButton:(JSQMessagesCollectionViewCell *)cell;
+
+/**
+ *  Tells the delegate that the totalLikeButton of the cell has been tapped.
+ *
+ *  @param cell The cell that received the tap touch event.
+ */
+- (void)messagesCollectionViewCellDidTapToalLikesButton:(JSQMessagesCollectionViewCell *)cell;
+
+/**
  *  Tells the delegate that the message bubble of the cell has been tapped.
  *
  *  @param cell The cell that received the tap touch event.
@@ -167,6 +181,12 @@ NS_ASSUME_NONNULL_BEGIN
  *  Returns the accessory button of the cell.
  */
 @property (weak, nonatomic, readonly, nullable) UIButton *accessoryButton;
+
+@property (weak, nonatomic, readonly, nullable) UIButton *selfLikeButton;
+
+@property (weak, nonatomic, readonly, nullable) UIButton *totalLikesButton;
+
+@property (strong, nonatomic, readonly, nullable) NSLayoutConstraint *totalSelfHorizontalSpaceConstraint;
 
 /**
  *  The media view of the cell. This view displays the contents of a media message.
