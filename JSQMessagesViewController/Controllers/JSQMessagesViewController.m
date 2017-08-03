@@ -23,6 +23,7 @@
 #import "JSQMessageData.h"
 #import "JSQMessageBubbleImageDataSource.h"
 #import "JSQMessageAvatarImageDataSource.h"
+#import "JSQMessageButtonDataSource.h"
 
 #import "JSQMessagesCollectionViewCellIncoming.h"
 #import "JSQMessagesCollectionViewCellOutgoing.h"
@@ -469,6 +470,18 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     return nil;
 }
 
+-(id<JSQMessageButtonDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView leftButtonDataForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSAssert(NO, @"ERROR: required method not implemented: %s", __PRETTY_FUNCTION__);
+    return nil;
+}
+
+-(id<JSQMessageButtonDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView rightButtonDataForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSAssert(NO, @"ERROR: required method not implemented: %s", __PRETTY_FUNCTION__);
+    return nil;
+}
+
 - (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellTopLabelAtIndexPath:(NSIndexPath *)indexPath
 {
     return nil;
@@ -574,7 +587,42 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     cell.layer.rasterizationScale = [UIScreen mainScreen].scale;
     cell.layer.shouldRasterize = YES;
     [self collectionView:collectionView accessibilityForCell:cell indexPath:indexPath message:messageItem];
+    
+    id<JSQMessageButtonDataSource> leftButtonDataSource = nil;
+    leftButtonDataSource = [collectionView.dataSource collectionView:collectionView leftButtonDataForItemAtIndexPath:indexPath];
+    if (leftButtonDataSource != nil) {
+        UIImage *image = [leftButtonDataSource image];
+        UIColor *color = [leftButtonDataSource color];
+        NSString *text = [leftButtonDataSource text];
+        
+        [cell.totalLikesButton setImage:image forState:UIControlStateNormal];
+        [cell.totalLikesButton setTintColor:color];
+        [cell.totalLikesButton setTitle:text forState:UIControlStateNormal];
+        if (image == nil && text == nil) {
+            [cell.totalLikesButton setHidden:YES];
+        }
+    } else {
+        [cell.totalLikesButton setHidden:YES];
+    }
 
+    id<JSQMessageButtonDataSource> rightButtonDataSource = nil;
+    rightButtonDataSource = [collectionView.dataSource collectionView:collectionView rightButtonDataForItemAtIndexPath:indexPath];
+    if (rightButtonDataSource != nil) {
+        UIImage *image = [rightButtonDataSource image];
+        UIColor *color = [rightButtonDataSource color];
+        NSString *text = [rightButtonDataSource text];
+        
+        [cell.selfLikeButton setImage:image forState:UIControlStateNormal];
+        [cell.selfLikeButton setTintColor:color];
+        [cell.selfLikeButton setTitle:text forState:UIControlStateNormal];
+        if (image == nil && text == nil) {
+            [cell.totalSelfHorizontalSpaceConstraint setActive:NO];
+            [cell.selfLikeButton setHidden:YES];
+        }
+    } else {
+        [cell.totalSelfHorizontalSpaceConstraint setActive:NO];
+        [cell.selfLikeButton setHidden:YES];
+    }
     return cell;
 }
 

@@ -23,6 +23,7 @@
 @protocol JSQMessageData;
 @protocol JSQMessageBubbleImageDataSource;
 @protocol JSQMessageAvatarImageDataSource;
+@protocol JSQMessageButtonDataSource;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -108,6 +109,10 @@ NS_ASSUME_NONNULL_BEGIN
  *  @see JSQMessagesCollectionViewFlowLayout.
  */
 - (nullable id<JSQMessageAvatarImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView avatarImageDataForItemAtIndexPath:(NSIndexPath *)indexPath;
+
+- (nullable id<JSQMessageButtonDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView leftButtonDataForItemAtIndexPath:(NSIndexPath *)indexPath;
+
+- (nullable id<JSQMessageButtonDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView rightButtonDataForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @optional
 
