@@ -616,9 +616,11 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
         [cell.selfLikeButton setTintColor:color];
         [cell.selfLikeButton setTitle:text forState:UIControlStateNormal];
         if (image == nil && text == nil) {
+            [cell.totalSelfHorizontalSpaceConstraint setActive:NO];
             [cell.selfLikeButton setHidden:YES];
         }
     } else {
+        [cell.totalSelfHorizontalSpaceConstraint setActive:NO];
         [cell.selfLikeButton setHidden:YES];
     }
     return cell;

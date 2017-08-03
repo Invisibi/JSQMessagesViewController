@@ -493,7 +493,6 @@
     UIImage *image = [[UIImage imageNamed: @"ic_thumb_up"] imageWithRenderingMode: UIImageRenderingModeAlwaysTemplate];
     UIColor *color = [UIColor colorWithRed: 244.0/255.0f green: 67.0/255.0f blue: 54.0/255.0f alpha: 1.0f];
     
-    
     return [[JSQMessagesButton alloc] initWithButtonImage:image color:color text:nil];
 }
 
@@ -502,8 +501,7 @@
     UIImage *image = [[UIImage imageNamed: @"ic_thumb_up"] imageWithRenderingMode: UIImageRenderingModeAlwaysTemplate];
     UIColor *color = [UIColor colorWithRed: 196.0/255.0f green: 196.0/255.0f blue: 196.0/255.0f alpha: 1.0f];
 
-    return [[JSQMessagesButton alloc] initWithButtonImage:image color:color text:nil];
-    
+    return [[JSQMessagesButton alloc] initWithButtonImage:nil color:nil text:nil];
 }
 
 - (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellTopLabelAtIndexPath:(NSIndexPath *)indexPath
