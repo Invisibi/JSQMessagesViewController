@@ -14,11 +14,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- *  A `JSQMessagesAvatarImage` model object represents an avatar image.
- *  This is a concrete class that implements the `JSQMessageAvatarImageDataSource` protocol.
- *  It contains a regular avatar image, a highlighted avatar image, and a placeholder avatar image.
+ *  A `JSQMessagesButton` model object represents an button.
+ *  This is a concrete class that implements the `JSQMessageButtonDataSource` protocol.
+ *  It contains a regular button image, color, and button text.
  *
- *  @see JSQMessagesAvatarImageFactory.
  */
 @interface JSQMessagesButton : NSObject <JSQMessageButtonDataSource, NSCopying>
 
@@ -26,6 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  The button image for a regular display state.
  */
 @property (nonatomic, strong, nullable) UIImage *image;
+
+/**
+ *  The button color for a regular display state.
+ */
+
 @property (nonatomic, strong, nullable) UIColor *color;
 
 /**
@@ -37,10 +41,10 @@ NS_ASSUME_NONNULL_BEGIN
  *  Initializes and returns an button image object having the specified image.
  *
  *  @param image The image for this button image. This image will be used for the all of the following
- *  properties: image, text;
+ *  properties: image, color, text;
  *  This value must not be `nil`.
  *
- *  @return An initialized `JSQMessagesTotalLikesButton` object.
+ *  @return An initialized `JSQMessagesButton` object.
  */
 + (instancetype)buttonWithImage:(UIImage *)image;
 
@@ -51,12 +55,12 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param text The button text for this  text.
  *
- *  @return An initialized `JSQMessagesTotalLikesButton` object.
+ *  @return An initialized `JSQMessagesButton` object.
  */
 + (instancetype)buttonWithText:(NSString *)text;
 
 /**
- *  Initializes and returns an avatar image object having the specified regular, highlighed, and placeholder images.
+ *  Initializes and returns an button object having the specified image, color, text.
  *
  *  @param image      The button image for a regular display state.
  *  @param text       The button title for a regular display state.
