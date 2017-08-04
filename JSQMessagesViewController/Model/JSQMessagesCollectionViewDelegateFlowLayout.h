@@ -24,6 +24,7 @@
 @class JSQMessagesCollectionViewCell;
 @class JSQMessagesLoadEarlierHeaderView;
 
+NS_ASSUME_NONNULL_BEGIN
 
 /**
 *  The `JSQMessagesCollectionViewDelegateFlowLayout` protocol defines methods that allow you to
@@ -85,6 +86,11 @@
  */
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapAvatarImageView:(UIImageView *)avatarImageView atIndexPath:(NSIndexPath *)indexPath;
 
+
+- (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapSelfLike:(UIButton *)selfLikeButton atIndexPath:(NSIndexPath *)indexPath;
+
+- (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapTotalLikes:(UIButton *)totalLikesButton atIndexPath:(NSIndexPath *)indexPath;
+
 /**
  *  Notifies the delegate that the message bubble at the specified indexPath did receive a tap event.
  *
@@ -120,3 +126,5 @@
                 header:(JSQMessagesLoadEarlierHeaderView *)headerView didTapLoadEarlierMessagesButton:(UIButton *)sender;
 
 @end
+
+NS_ASSUME_NONNULL_END
