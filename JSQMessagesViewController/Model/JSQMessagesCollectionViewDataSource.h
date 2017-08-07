@@ -23,7 +23,7 @@
 @protocol JSQMessageData;
 @protocol JSQMessageBubbleImageDataSource;
 @protocol JSQMessageAvatarImageDataSource;
-
+@protocol JSQMessageButtonDataSource;
 
 /**
  *  An object that adopts the `JSQMessagesCollectionViewDataSource` protocol is responsible for providing the data and views
@@ -107,6 +107,11 @@
  *  @see JSQMessagesCollectionViewFlowLayout.
  */
 - (id<JSQMessageAvatarImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView avatarImageDataForItemAtIndexPath:(NSIndexPath *)indexPath;
+
+
+- (nullable id<JSQMessageButtonDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView leftButtonDataForItemAtIndexPath:(NSIndexPath *)indexPath;
+
+- (nullable id<JSQMessageButtonDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView rightButtonDataForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @optional
 

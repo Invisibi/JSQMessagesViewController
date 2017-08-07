@@ -147,6 +147,26 @@
                       atIndexPath:indexPath];
 }
 
+-(void)messagesCollectionViewCellDidTapRightButton:(JSQMessagesCollectionViewCell *)cell
+{
+    NSIndexPath *indexPath = [self indexPathForCell:cell];
+    if (indexPath == nil) {
+        return;
+    }
+    
+    [self.delegate collectionView:self didTapRightButton: cell.rightButton atIndexPath: indexPath];
+}
+
+-(void)messagesCollectionViewCellDidTapLeftButton:(JSQMessagesCollectionViewCell *)cell
+{
+    NSIndexPath *indexPath = [self indexPathForCell:cell];
+    if (indexPath == nil) {
+        return;
+    }
+    [self.delegate collectionView:self didTapLeftButton: cell.leftButton atIndexPath: indexPath];
+}
+
+
 - (void)messagesCollectionViewCellDidTapMessageBubble:(JSQMessagesCollectionViewCell *)cell
 {
     NSIndexPath *indexPath = [self indexPathForCell:cell];

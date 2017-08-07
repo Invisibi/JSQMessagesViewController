@@ -56,6 +56,12 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewWidthConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewHeightConstraint;
 
+@property (weak, nonatomic) IBOutlet UIButton *rightButton;
+@property (weak, nonatomic) IBOutlet UIButton *leftButton;
+
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *totalSelfHorizontalSpaceConstraint;
+
+
 @property (assign, nonatomic) UIEdgeInsets textViewFrameInsets;
 
 @property (assign, nonatomic) CGSize avatarViewSize;
@@ -130,6 +136,22 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jsq_handleTapGesture:)];
     [self addGestureRecognizer:tap];
     self.tapGestureRecognizer = tap;
+    
+        self.rightButton.layer.shadowColor = [UIColor colorWithRed: 0.0f green: 0.0f blue:0.0f alpha: 0.5f].CGColor;
+        self.rightButton.layer.shadowOffset = CGSizeMake(0, 2.2f);
+        self.rightButton.layer.shadowOpacity = 0.25f;
+        self.rightButton.layer.shadowRadius = 3;
+        self.rightButton.layer.masksToBounds = NO;
+        self.rightButton.layer.cornerRadius = 12;
+        self.rightButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    
+        self.leftButton.layer.shadowColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.5f].CGColor;
+        self.leftButton.layer.shadowOffset = CGSizeMake(0, 2.2f);
+        self.leftButton.layer.shadowOpacity = 0.25f;
+        self.leftButton.layer.shadowRadius = 3;
+        self.leftButton.layer.masksToBounds = NO;
+        self.leftButton.layer.cornerRadius = 12;
+        self.leftButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)dealloc
@@ -389,6 +411,16 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     }
     
     return NO;
+}
+
+- (IBAction)didTapLeftButton:(UIButton *)leftButton
+{
+    [self.delegate messagesCollectionViewCellDidTapLeftButton:self];
+}
+
+- (IBAction)didTapRightButton:(UIButton *)rightButton
+{
+    [self.delegate messagesCollectionViewCellDidTapRightButton:self];
 }
 
 @end

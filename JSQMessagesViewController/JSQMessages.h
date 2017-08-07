@@ -52,6 +52,7 @@
 
 #import "JSQMessagesBubbleImage.h"
 #import "JSQMessagesAvatarImage.h"
+#import "JSQMessagesButton.h"
 
 #import "JSQAudioMediaViewAttributes.h"
 
@@ -60,6 +61,7 @@
 #import "JSQMessageMediaData.h"
 #import "JSQMessageAvatarImageDataSource.h"
 #import "JSQMessageBubbleImageDataSource.h"
+#import "JSQMessageButtonDataSource.h"
 #import "JSQMessagesCollectionViewDataSource.h"
 #import "JSQMessagesCollectionViewDelegateFlowLayout.h"
 
