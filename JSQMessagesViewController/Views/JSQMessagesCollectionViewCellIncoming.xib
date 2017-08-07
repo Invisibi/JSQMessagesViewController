@@ -112,7 +112,7 @@
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <connections>
-                            <action selector="didTapSelfLikeButton:" destination="4lh-CK-yVn" eventType="touchUpInside" id="WvD-YC-wCV"/>
+                            <action selector="didTapRightButton:" destination="4lh-CK-yVn" eventType="touchUpInside" id="apt-oQ-ueA"/>
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qpu-nX-JhT">
@@ -126,7 +126,7 @@
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <connections>
-                            <action selector="didTapTotalLikesButton:" destination="4lh-CK-yVn" eventType="touchUpInside" id="P7T-G7-hnM"/>
+                            <action selector="didTapLeftButton:" destination="4lh-CK-yVn" eventType="touchUpInside" id="RTQ-mZ-BnX"/>
                         </connections>
                     </button>
                 </subviews>
@@ -165,18 +165,18 @@
                 <outlet property="cellBottomLabelHeightConstraint" destination="xPR-Ph-Ze9" id="nvV-Tk-AIs"/>
                 <outlet property="cellTopLabel" destination="afj-rd-iNv" id="bTd-4q-U7e"/>
                 <outlet property="cellTopLabelHeightConstraint" destination="fKS-MR-YPI" id="YWd-Rd-qSL"/>
+                <outlet property="leftButton" destination="Qpu-nX-JhT" id="MDd-PD-Pah"/>
                 <outlet property="messageBubbleContainerView" destination="btS-p8-B7Z" id="2sk-5p-NEd"/>
                 <outlet property="messageBubbleContainerWidthConstraint" destination="stE-iz-VHo" id="lle-iT-67d"/>
                 <outlet property="messageBubbleImageView" destination="OCS-Fu-acq" id="OuN-5t-30g"/>
                 <outlet property="messageBubbleTopLabel" destination="Ufa-bF-l1Y" id="VtH-te-blR"/>
                 <outlet property="messageBubbleTopLabelHeightConstraint" destination="fal-sy-hrK" id="kgv-NO-Gud"/>
-                <outlet property="selfLikeButton" destination="StN-X8-FtQ" id="SdN-tO-ywL"/>
+                <outlet property="rightButton" destination="StN-X8-FtQ" id="hoW-i1-Fes"/>
                 <outlet property="textView" destination="KYU-B8-cUW" id="1Yv-ln-EUZ"/>
                 <outlet property="textViewAvatarHorizontalSpaceConstraint" destination="Tg9-9l-vr8" id="HWn-aO-NbR"/>
                 <outlet property="textViewBottomVerticalSpaceConstraint" destination="B2v-Gq-Y1L" id="oKV-Ti-Oci"/>
                 <outlet property="textViewMarginHorizontalSpaceConstraint" destination="4qS-03-PFO" id="1Qe-Ee-fUO"/>
                 <outlet property="textViewTopVerticalSpaceConstraint" destination="aEL-yH-N1p" id="WPl-0b-tf1"/>
-                <outlet property="totalLikesButton" destination="Qpu-nX-JhT" id="b3z-7d-zOl"/>
                 <outlet property="totalSelfHorizontalSpaceConstraint" destination="5AY-mF-AbR" id="DEz-be-4w3"/>
             </connections>
             <point key="canvasLocation" x="255" y="202"/>

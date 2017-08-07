@@ -87,9 +87,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapAvatarImageView:(UIImageView *)avatarImageView atIndexPath:(NSIndexPath *)indexPath;
 
 
-- (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapSelfLike:(UIButton *)selfLikeButton atIndexPath:(NSIndexPath *)indexPath;
+- (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapRightButton:(UIButton *)rightButton atIndexPath:(NSIndexPath *)indexPath;
 
-- (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapTotalLikes:(UIButton *)totalLikesButton atIndexPath:(NSIndexPath *)indexPath;
+- (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapLeftButton:(UIButton *)leftButton atIndexPath:(NSIndexPath *)indexPath;
 
 /**
  *  Notifies the delegate that the message bubble at the specified indexPath did receive a tap event.

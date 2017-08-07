@@ -45,14 +45,14 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param cell The cell that received the tap touch event.
  */
-- (void)messagesCollectionViewCellDidTapSelfLikeButton:(JSQMessagesCollectionViewCell *)cell;
+- (void)messagesCollectionViewCellDidTapRightButton:(JSQMessagesCollectionViewCell *)cell;
 
 /**
  *  Tells the delegate that the totalLikeButton of the cell has been tapped.
  *
  *  @param cell The cell that received the tap touch event.
  */
-- (void)messagesCollectionViewCellDidTapToalLikesButton:(JSQMessagesCollectionViewCell *)cell;
+- (void)messagesCollectionViewCellDidTapLeftButton:(JSQMessagesCollectionViewCell *)cell;
 
 /**
  *  Tells the delegate that the message bubble of the cell has been tapped.
@@ -182,9 +182,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (weak, nonatomic, readonly, nullable) UIButton *accessoryButton;
 
-@property (weak, nonatomic, readonly, nullable) UIButton *selfLikeButton;
+@property (weak, nonatomic, readonly, nullable) UIButton *rightButton;
 
-@property (weak, nonatomic, readonly, nullable) UIButton *totalLikesButton;
+@property (weak, nonatomic, readonly, nullable) UIButton *leftButton;
 
 @property (strong, nonatomic, readonly, nullable) NSLayoutConstraint *totalSelfHorizontalSpaceConstraint;
 

@@ -43,8 +43,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 @property (weak, nonatomic) IBOutlet UIView *avatarContainerView;
 
 @property (weak, nonatomic) IBOutlet UIButton *accessoryButton;
-@property (weak, nonatomic) IBOutlet UIButton *selfLikeButton;
-@property (weak, nonatomic) IBOutlet UIButton *totalLikesButton;
+@property (weak, nonatomic) IBOutlet UIButton *rightButton;
+@property (weak, nonatomic) IBOutlet UIButton *leftButton;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageBubbleContainerWidthConstraint;
 
@@ -145,21 +145,21 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     [self addGestureRecognizer:tap];
     self.tapGestureRecognizer = tap;
     
-    self.selfLikeButton.layer.shadowColor = [UIColor colorWithRed: 0.0f green: 0.0f blue:0.0f alpha: 0.5f].CGColor;
-    self.selfLikeButton.layer.shadowOffset = CGSizeMake(0, 2.2f);
-    self.selfLikeButton.layer.shadowOpacity = 0.25f;
-    self.selfLikeButton.layer.shadowRadius = 3;
-    self.selfLikeButton.layer.masksToBounds = NO;
-    self.selfLikeButton.layer.cornerRadius = 12;
-    self.selfLikeButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.rightButton.layer.shadowColor = [UIColor colorWithRed: 0.0f green: 0.0f blue:0.0f alpha: 0.5f].CGColor;
+    self.rightButton.layer.shadowOffset = CGSizeMake(0, 2.2f);
+    self.rightButton.layer.shadowOpacity = 0.25f;
+    self.rightButton.layer.shadowRadius = 3;
+    self.rightButton.layer.masksToBounds = NO;
+    self.rightButton.layer.cornerRadius = 12;
+    self.rightButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
-    self.totalLikesButton.layer.shadowColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.5f].CGColor;
-    self.totalLikesButton.layer.shadowOffset = CGSizeMake(0, 2.2f);
-    self.totalLikesButton.layer.shadowOpacity = 0.25f;
-    self.totalLikesButton.layer.shadowRadius = 3;
-    self.totalLikesButton.layer.masksToBounds = NO;
-    self.totalLikesButton.layer.cornerRadius = 12;
-    self.totalLikesButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.leftButton.layer.shadowColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.5f].CGColor;
+    self.leftButton.layer.shadowOffset = CGSizeMake(0, 2.2f);
+    self.leftButton.layer.shadowOpacity = 0.25f;
+    self.leftButton.layer.shadowRadius = 3;
+    self.leftButton.layer.masksToBounds = NO;
+    self.leftButton.layer.cornerRadius = 12;
+    self.leftButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)configureAccessoryButton
@@ -171,12 +171,12 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
 - (void)setButtonImage:(UIImage*)image
 {
-    [self.selfLikeButton setImage:image forState:UIControlStateNormal];
+    [self.rightButton setImage:image forState:UIControlStateNormal];
 }
 
 - (void) setButtonText:(NSString*)text
 {
-    [self.selfLikeButton setTitle:text forState:UIControlStateNormal];
+    [self.rightButton setTitle:text forState:UIControlStateNormal];
 }
 
 - (void)dealloc
@@ -216,7 +216,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     
     self.accessoryButton.hidden = YES;
     
-    self.totalLikesButton.titleLabel.text = nil;
+    self.leftButton.titleLabel.text = nil;
 }
 
 - (UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes
@@ -445,13 +445,13 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     [self.delegate messagesCollectionViewCellDidTapAccessoryButton:self];
 }
 
-- (IBAction)didTapTotalLikesButton:(UIButton *)totalLikesButton
+- (IBAction)didTapLeftButton:(UIButton *)leftButton
 {
-    [self.delegate messagesCollectionViewCellDidTapToalLikesButton:self];
+    [self.delegate messagesCollectionViewCellDidTapLeftButton:self];
 }
 
-- (IBAction)didTapSelfLikeButton:(UIButton *)selfLikeButton
+- (IBAction)didTapRightButton:(UIButton *)rightButton
 {
-    [self.delegate messagesCollectionViewCellDidTapSelfLikeButton:self];
+    [self.delegate messagesCollectionViewCellDidTapRightButton:self];
 }
 @end

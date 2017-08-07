@@ -595,14 +595,15 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
         UIColor *color = [leftButtonDataSource color];
         NSString *text = [leftButtonDataSource text];
         
-        [cell.totalLikesButton setImage:image forState:UIControlStateNormal];
-        [cell.totalLikesButton setTintColor:color];
-        [cell.totalLikesButton setTitle:text forState:UIControlStateNormal];
+        [cell.leftButton setImage:image forState:UIControlStateNormal];
+        [cell.leftButton setTintColor:color];
+        [cell.leftButton setTitle:text forState:UIControlStateNormal];
+        [cell.leftButton setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
         if (image == nil && text == nil) {
-            [cell.totalLikesButton setHidden:YES];
+            [cell.leftButton setHidden:YES];
         }
     } else {
-        [cell.totalLikesButton setHidden:YES];
+        [cell.leftButton setHidden:YES];
     }
 
     id<JSQMessageButtonDataSource> rightButtonDataSource = nil;
@@ -612,16 +613,18 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
         UIColor *color = [rightButtonDataSource color];
         NSString *text = [rightButtonDataSource text];
         
-        [cell.selfLikeButton setImage:image forState:UIControlStateNormal];
-        [cell.selfLikeButton setTintColor:color];
-        [cell.selfLikeButton setTitle:text forState:UIControlStateNormal];
+        [cell.rightButton setImage:image forState:UIControlStateNormal];
+        [cell.rightButton setTintColor:color];
+        [cell.rightButton setTitle:text forState:UIControlStateNormal];
+        [cell.rightButton setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
+
         if (image == nil && text == nil) {
             [cell.totalSelfHorizontalSpaceConstraint setActive:NO];
-            [cell.selfLikeButton setHidden:YES];
+            [cell.rightButton setHidden:YES];
         }
     } else {
         [cell.totalSelfHorizontalSpaceConstraint setActive:NO];
-        [cell.selfLikeButton setHidden:YES];
+        [cell.rightButton setHidden:YES];
     }
     return cell;
 }
