@@ -39,6 +39,20 @@
 - (void)messagesCollectionViewCellDidTapAvatar:(JSQMessagesCollectionViewCell *)cell;
 
 /**
+ *  Tells the delegate that the selfLikeButton of the cell has been tapped.
+ *
+ *  @param cell The cell that received the tap touch event.
+ */
+- (void)messagesCollectionViewCellDidTapRightButton:(JSQMessagesCollectionViewCell *)cell;
+
+/**
+ *  Tells the delegate that the totalLikeButton of the cell has been tapped.
+ *
+ *  @param cell The cell that received the tap touch event.
+ */
+- (void)messagesCollectionViewCellDidTapLeftButton:(JSQMessagesCollectionViewCell *)cell;
+
+/**
  *  Tells the delegate that the message bubble of the cell has been tapped.
  *
  *  @param cell The cell that received the tap touch event.
@@ -153,6 +167,12 @@
  *  Doing so could result in unexpected behavior.
  */
 @property (weak, nonatomic, readonly) UIView *avatarContainerView;
+
+@property (weak, nonatomic, readonly, nullable) UIButton *rightButton;
+
+@property (weak, nonatomic, readonly, nullable) UIButton *leftButton;
+
+@property (strong, nonatomic, readonly, nullable) NSLayoutConstraint *totalSelfHorizontalSpaceConstraint;
 
 /**
  *  The media view of the cell. This view displays the contents of a media message.
