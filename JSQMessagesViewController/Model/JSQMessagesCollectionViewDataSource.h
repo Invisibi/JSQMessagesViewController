@@ -109,9 +109,9 @@
 - (id<JSQMessageAvatarImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView avatarImageDataForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 
-- (nullable id<JSQMessageButtonDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView leftButtonDataForItemAtIndexPath:(NSIndexPath *)indexPath;
+- (nullable id<JSQMessageButtonDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView secondaryButtonDataForItemAtIndexPath:(NSIndexPath *)indexPath;
 
-- (nullable id<JSQMessageButtonDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView rightButtonDataForItemAtIndexPath:(NSIndexPath *)indexPath;
+- (nullable id<JSQMessageButtonDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView primaryButtonDataForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @optional
 

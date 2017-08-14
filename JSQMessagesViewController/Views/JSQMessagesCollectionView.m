@@ -147,23 +147,23 @@
                       atIndexPath:indexPath];
 }
 
--(void)messagesCollectionViewCellDidTapRightButton:(JSQMessagesCollectionViewCell *)cell
+-(void)messagesCollectionViewCellDidTapPrimaryButton:(JSQMessagesCollectionViewCell *)cell
 {
     NSIndexPath *indexPath = [self indexPathForCell:cell];
     if (indexPath == nil) {
         return;
     }
     
-    [self.delegate collectionView:self didTapRightButton: cell.rightButton atIndexPath: indexPath];
+    [self.delegate collectionView:self didTapPrimaryButton: cell.primaryButton atIndexPath: indexPath];
 }
 
--(void)messagesCollectionViewCellDidTapLeftButton:(JSQMessagesCollectionViewCell *)cell
+-(void)messagesCollectionViewCellDidTapSecondaryButton:(JSQMessagesCollectionViewCell *)cell
 {
     NSIndexPath *indexPath = [self indexPathForCell:cell];
     if (indexPath == nil) {
         return;
     }
-    [self.delegate collectionView:self didTapLeftButton: cell.leftButton atIndexPath: indexPath];
+    [self.delegate collectionView:self didTapSecondaryButton: cell.secondaryButton atIndexPath: indexPath];
 }
 
 

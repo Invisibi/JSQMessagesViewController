@@ -86,9 +86,9 @@
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapAvatarImageView:(UIImageView *)avatarImageView atIndexPath:(NSIndexPath *)indexPath;
 
 
-- (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapRightButton:(UIButton *)rightButton atIndexPath:(NSIndexPath *)indexPath;
+- (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapPrimaryButton:(UIButton *)primaryButton atIndexPath:(NSIndexPath *)indexPath;
 
-- (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapLeftButton:(UIButton *)leftButton atIndexPath:(NSIndexPath *)indexPath;
+- (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapSecondaryButton:(UIButton *)secondaryButton atIndexPath:(NSIndexPath *)indexPath;
 
 /**
  *  Notifies the delegate that the message bubble at the specified indexPath did receive a tap event.

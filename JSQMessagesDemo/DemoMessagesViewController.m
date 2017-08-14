@@ -469,19 +469,19 @@
     return [self.demoData.avatars objectForKey:message.senderId];
 }
 
--(id<JSQMessageButtonDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView leftButtonDataForItemAtIndexPath:(NSIndexPath *)indexPath
+-(id<JSQMessageButtonDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView secondaryButtonDataForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UIImage *image = [[UIImage imageNamed: @"ic_thumb_up"] imageWithRenderingMode: UIImageRenderingModeAlwaysTemplate];
     UIColor *color = [UIColor colorWithRed: 244.0/255.0f green: 67.0/255.0f blue: 54.0/255.0f alpha: 1.0f];
-    return [[JSQMessagesButton alloc] initWithButtonImage:image color:color text:nil];
+    return [[JSQMessagesButton alloc] initWithButtonImage:nil color:nil text:nil];
 }
 
--(id<JSQMessageButtonDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView rightButtonDataForItemAtIndexPath:(NSIndexPath *)indexPath
+-(id<JSQMessageButtonDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView primaryButtonDataForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UIImage *image = [[UIImage imageNamed: @"ic_thumb_up"] imageWithRenderingMode: UIImageRenderingModeAlwaysTemplate];
     UIColor *color = [UIColor colorWithRed: 196.0/255.0f green: 196.0/255.0f blue: 196.0/255.0f alpha: 1.0f];
     
-    return [[JSQMessagesButton alloc] initWithButtonImage:nil color:nil text:nil];
+    return [[JSQMessagesButton alloc] initWithButtonImage:image color:color text:nil];
 }
 
 - (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellTopLabelAtIndexPath:(NSIndexPath *)indexPath
@@ -678,23 +678,23 @@
     NSLog(@"Tapped avatar!");
 }
 
-- (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapRightButton:(UIButton *)rightButton atIndexPath:(NSIndexPath *)indexPath;
+- (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapPrimaryButton:(UIButton *)primaryButton atIndexPath:(NSIndexPath *)indexPath;
 {
     JSQMessagesCollectionViewCell *cell = (JSQMessagesCollectionViewCell*) [collectionView cellForItemAtIndexPath:indexPath];
-    [cell.rightButton setHidden:YES];
-    [cell.leftButton setHidden:NO];
+    [cell.primaryButton setHidden:YES];
+    [cell.secondaryButton setHidden:NO];
     [cell.totalSelfHorizontalSpaceConstraint setActive:NO];
     
-    NSLog(@"Tapped selfLike!");
+    NSLog(@"Tapped primary!");
 }
 
-- (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapLeftButton:(UIButton *)leftButton atIndexPath:(NSIndexPath *)indexPath;
+- (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapSecondaryButton:(UIButton *)secondaryButton atIndexPath:(NSIndexPath *)indexPath;
 {
     JSQMessagesCollectionViewCell *cell = (JSQMessagesCollectionViewCell*) [collectionView cellForItemAtIndexPath:indexPath];
-    [cell.rightButton setHidden:NO];
+    [cell.primaryButton setHidden:NO];
     [cell.totalSelfHorizontalSpaceConstraint setActive:YES];
     
-    NSLog(@"Tapped totalLikes!");
+    NSLog(@"Tapped secondary!");
 }
 
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapMessageBubbleAtIndexPath:(NSIndexPath *)indexPath
