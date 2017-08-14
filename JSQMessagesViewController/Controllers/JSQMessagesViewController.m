@@ -510,13 +510,13 @@ JSQMessagesKeyboardControllerDelegate>
     return nil;
 }
 
--(id<JSQMessageButtonDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView leftButtonDataForItemAtIndexPath:(NSIndexPath *)indexPath
+-(id<JSQMessageButtonDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView secondaryButtonDataForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSAssert(NO, @"ERROR: required method not implemented: %s", __PRETTY_FUNCTION__);
     return nil;
 }
 
--(id<JSQMessageButtonDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView rightButtonDataForItemAtIndexPath:(NSIndexPath *)indexPath
+-(id<JSQMessageButtonDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView primaryButtonDataForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSAssert(NO, @"ERROR: required method not implemented: %s", __PRETTY_FUNCTION__);
     return nil;
@@ -635,40 +635,40 @@ JSQMessagesKeyboardControllerDelegate>
     cell.layer.shouldRasterize = YES;
     [self collectionView:collectionView accessibilityForCell:cell indexPath:indexPath message:messageItem];
     
-    id<JSQMessageButtonDataSource> leftButtonDataSource = nil;
-    leftButtonDataSource = [collectionView.dataSource collectionView:collectionView leftButtonDataForItemAtIndexPath:indexPath];
-    if (leftButtonDataSource != nil) {
-        UIImage *image = [leftButtonDataSource image];
-        UIColor *color = [leftButtonDataSource color];
-        NSString *text = [leftButtonDataSource text];
+    id<JSQMessageButtonDataSource> secondaryButtonDataSource = nil;
+    secondaryButtonDataSource = [collectionView.dataSource collectionView:collectionView secondaryButtonDataForItemAtIndexPath:indexPath];
+    if (secondaryButtonDataSource != nil) {
+        UIImage *image = [secondaryButtonDataSource image];
+        UIColor *color = [secondaryButtonDataSource color];
+        NSString *text = [secondaryButtonDataSource text];
         
-        [cell.leftButton setImage:image forState:UIControlStateNormal];
-        [cell.leftButton setTintColor:color];
-        [cell.leftButton setTitle:text forState:UIControlStateNormal];
+        [cell.secondaryButton setImage:image forState:UIControlStateNormal];
+        [cell.secondaryButton setTintColor:color];
+        [cell.secondaryButton setTitle:text forState:UIControlStateNormal];
         if (image == nil && text == nil) {
-            [cell.leftButton setHidden:YES];
+            [cell.secondaryButton setHidden:YES];
         }
     } else {
-        [cell.leftButton setHidden:YES];
+        [cell.secondaryButton setHidden:YES];
     }
     
-    id<JSQMessageButtonDataSource> rightButtonDataSource = nil;
-    rightButtonDataSource = [collectionView.dataSource collectionView:collectionView rightButtonDataForItemAtIndexPath:indexPath];
-    if (rightButtonDataSource != nil) {
-        UIImage *image = [rightButtonDataSource image];
-        UIColor *color = [rightButtonDataSource color];
-        NSString *text = [rightButtonDataSource text];
+    id<JSQMessageButtonDataSource> primaryButtonDataSource = nil;
+    primaryButtonDataSource = [collectionView.dataSource collectionView:collectionView primaryButtonDataForItemAtIndexPath:indexPath];
+    if (primaryButtonDataSource != nil) {
+        UIImage *image = [primaryButtonDataSource image];
+        UIColor *color = [primaryButtonDataSource color];
+        NSString *text = [primaryButtonDataSource text];
         
-        [cell.rightButton setImage:image forState:UIControlStateNormal];
-        [cell.rightButton setTintColor:color];
-        [cell.rightButton setTitle:text forState:UIControlStateNormal];
+        [cell.primaryButton setImage:image forState:UIControlStateNormal];
+        [cell.primaryButton setTintColor:color];
+        [cell.primaryButton setTitle:text forState:UIControlStateNormal];
         if (image == nil && text == nil) {
             [cell.totalSelfHorizontalSpaceConstraint setActive:NO];
-            [cell.rightButton setHidden:YES];
+            [cell.primaryButton setHidden:YES];
         }
     } else {
         [cell.totalSelfHorizontalSpaceConstraint setActive:NO];
-        [cell.rightButton setHidden:YES];
+        [cell.primaryButton setHidden:YES];
     }
 
     return cell;

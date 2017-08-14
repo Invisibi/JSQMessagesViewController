@@ -56,8 +56,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewWidthConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewHeightConstraint;
 
-@property (weak, nonatomic) IBOutlet UIButton *rightButton;
-@property (weak, nonatomic) IBOutlet UIButton *leftButton;
+@property (weak, nonatomic) IBOutlet UIButton *primaryButton;
+@property (weak, nonatomic) IBOutlet UIButton *secondaryButton;
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *totalSelfHorizontalSpaceConstraint;
 
@@ -137,21 +137,21 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     [self addGestureRecognizer:tap];
     self.tapGestureRecognizer = tap;
     
-        self.rightButton.layer.shadowColor = [UIColor colorWithRed: 0.0f green: 0.0f blue:0.0f alpha: 0.5f].CGColor;
-        self.rightButton.layer.shadowOffset = CGSizeMake(0, 2.2f);
-        self.rightButton.layer.shadowOpacity = 0.25f;
-        self.rightButton.layer.shadowRadius = 3;
-        self.rightButton.layer.masksToBounds = NO;
-        self.rightButton.layer.cornerRadius = 12;
-        self.rightButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.primaryButton.layer.shadowColor = [UIColor colorWithRed: 0.0f green: 0.0f blue:0.0f alpha: 0.5f].CGColor;
+        self.primaryButton.layer.shadowOffset = CGSizeMake(0, 2.2f);
+        self.primaryButton.layer.shadowOpacity = 0.25f;
+        self.primaryButton.layer.shadowRadius = 3;
+        self.primaryButton.layer.masksToBounds = NO;
+        self.primaryButton.layer.cornerRadius = 12;
+        self.primaryButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
-        self.leftButton.layer.shadowColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.5f].CGColor;
-        self.leftButton.layer.shadowOffset = CGSizeMake(0, 2.2f);
-        self.leftButton.layer.shadowOpacity = 0.25f;
-        self.leftButton.layer.shadowRadius = 3;
-        self.leftButton.layer.masksToBounds = NO;
-        self.leftButton.layer.cornerRadius = 12;
-        self.leftButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.secondaryButton.layer.shadowColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.5f].CGColor;
+        self.secondaryButton.layer.shadowOffset = CGSizeMake(0, 2.2f);
+        self.secondaryButton.layer.shadowOpacity = 0.25f;
+        self.secondaryButton.layer.shadowRadius = 3;
+        self.secondaryButton.layer.masksToBounds = NO;
+        self.secondaryButton.layer.cornerRadius = 12;
+        self.secondaryButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)dealloc
@@ -413,14 +413,14 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     return NO;
 }
 
-- (IBAction)didTapLeftButton:(UIButton *)leftButton
+- (IBAction)didTapSecondaryButton:(UIButton *)secondaryButton
 {
-    [self.delegate messagesCollectionViewCellDidTapLeftButton:self];
+    [self.delegate messagesCollectionViewCellDidTapSecondaryButton:self];
 }
 
-- (IBAction)didTapRightButton:(UIButton *)rightButton
+- (IBAction)didTapPrimaryButton:(UIButton *)primaryButton
 {
-    [self.delegate messagesCollectionViewCellDidTapRightButton:self];
+    [self.delegate messagesCollectionViewCellDidTapPrimaryButton:self];
 }
 
 @end

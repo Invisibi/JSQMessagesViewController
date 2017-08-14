@@ -43,14 +43,14 @@
  *
  *  @param cell The cell that received the tap touch event.
  */
-- (void)messagesCollectionViewCellDidTapRightButton:(JSQMessagesCollectionViewCell *)cell;
+- (void)messagesCollectionViewCellDidTapPrimaryButton:(JSQMessagesCollectionViewCell *)cell;
 
 /**
  *  Tells the delegate that the totalLikeButton of the cell has been tapped.
  *
  *  @param cell The cell that received the tap touch event.
  */
-- (void)messagesCollectionViewCellDidTapLeftButton:(JSQMessagesCollectionViewCell *)cell;
+- (void)messagesCollectionViewCellDidTapSecondaryButton:(JSQMessagesCollectionViewCell *)cell;
 
 /**
  *  Tells the delegate that the message bubble of the cell has been tapped.
@@ -168,9 +168,9 @@
  */
 @property (weak, nonatomic, readonly) UIView *avatarContainerView;
 
-@property (weak, nonatomic, readonly, nullable) UIButton *rightButton;
+@property (weak, nonatomic, readonly, nullable) UIButton *primaryButton;
 
-@property (weak, nonatomic, readonly, nullable) UIButton *leftButton;
+@property (weak, nonatomic, readonly, nullable) UIButton *secondaryButton;
 
 @property (strong, nonatomic, readonly, nullable) NSLayoutConstraint *totalSelfHorizontalSpaceConstraint;
 
