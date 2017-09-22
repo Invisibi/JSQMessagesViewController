@@ -188,6 +188,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
     self.avatarImageView.image = nil;
     self.avatarImageView.highlightedImage = nil;
+    self.avatarImageView.layer.borderWidth = 0.0;
+    self.avatarImageView.layer.borderColor = nil;
 }
 
 - (UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes
