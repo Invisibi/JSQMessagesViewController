@@ -157,6 +157,11 @@
 @property (weak, nonatomic, readonly) UIImageView *avatarImageView;
 
 /**
+ *  Returns the avatar indicator image view of the cell that is responsible for displaying avatar indicator images.
+ */
+@property (weak, nonatomic) IBOutlet UIImageView *avatarIndicatorImageView;
+
+/**
  *  Returns the avatar container view of the cell. This view is the superview of the cell's avatarImageView.
  *
  *  @discussion You may customize the cell by adding custom views to this container view.
