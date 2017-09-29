@@ -67,23 +67,23 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Da1-09-wR4" userLabel="Avatar container">
                         <rect key="frame" x="0.0" y="100" width="34" height="34"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lb6-gb-vtP">
-                                <rect key="frame" x="22" y="0.0" width="12" height="12"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="12" id="WeO-AP-qgk"/>
-                                    <constraint firstAttribute="width" constant="12" id="goz-vi-Hfe"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w23-sL-0Rh" userLabel="Avatar Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lb6-gb-vtP">
+                                <rect key="frame" x="24" y="-6" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="WeO-AP-qgk"/>
+                                    <constraint firstAttribute="width" constant="16" id="goz-vi-Hfe"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Lb6-gb-vtP" firstAttribute="trailing" secondItem="w23-sL-0Rh" secondAttribute="trailing" id="4sq-1k-rDl"/>
+                            <constraint firstItem="Lb6-gb-vtP" firstAttribute="trailing" secondItem="w23-sL-0Rh" secondAttribute="trailing" constant="6" id="4sq-1k-rDl"/>
                             <constraint firstItem="w23-sL-0Rh" firstAttribute="leading" secondItem="Da1-09-wR4" secondAttribute="leading" id="6zm-sH-cOT"/>
                             <constraint firstAttribute="trailing" secondItem="w23-sL-0Rh" secondAttribute="trailing" id="JgK-7W-L10"/>
-                            <constraint firstItem="Lb6-gb-vtP" firstAttribute="top" secondItem="w23-sL-0Rh" secondAttribute="top" id="PsQ-jh-jXC"/>
+                            <constraint firstItem="Lb6-gb-vtP" firstAttribute="top" secondItem="w23-sL-0Rh" secondAttribute="top" constant="-6" id="PsQ-jh-jXC"/>
                             <constraint firstAttribute="bottom" secondItem="w23-sL-0Rh" secondAttribute="bottom" id="U39-Ze-JZ6"/>
                             <constraint firstAttribute="width" constant="34" id="YwX-fW-Me6"/>
                             <constraint firstItem="w23-sL-0Rh" firstAttribute="top" secondItem="Da1-09-wR4" secondAttribute="top" id="hxb-KR-hNK"/>

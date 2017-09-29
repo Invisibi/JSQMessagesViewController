@@ -168,6 +168,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     _mediaView = nil;
 
     _avatarImageView = nil;
+    _avatarIndicatorImageView = nil;
 
     [_tapGestureRecognizer removeTarget:nil action:NULL];
     _tapGestureRecognizer = nil;
@@ -191,6 +192,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     self.avatarImageView.highlightedImage = nil;
     self.avatarImageView.layer.borderWidth = 0.0;
     self.avatarImageView.layer.borderColor = nil;
+    
+    self.avatarIndicatorImageView.image = nil;
 }
 
 - (UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes
@@ -313,6 +316,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
     self.messageBubbleContainerView.backgroundColor = backgroundColor;
     self.avatarContainerView.backgroundColor = backgroundColor;
+    
+    self.avatarIndicatorImageView.backgroundColor = backgroundColor;
 }
 
 - (void)setAvatarViewSize:(CGSize)avatarViewSize
