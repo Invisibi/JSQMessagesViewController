@@ -33,6 +33,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *cellTopLabel;
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *messageBubbleTopLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *messageBubbleTopLabelIconView;
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *cellBottomLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *messageBubbleContainerView;
@@ -161,6 +162,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
     _cellTopLabel = nil;
     _messageBubbleTopLabel = nil;
+    _messageBubbleTopLabelIconView = nil;
     _cellBottomLabel = nil;
 
     _textView = nil;
@@ -182,6 +184,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
     self.cellTopLabel.text = nil;
     self.messageBubbleTopLabel.text = nil;
+    self.messageBubbleTopLabelIconView.image = nil;
     self.cellBottomLabel.text = nil;
 
     self.textView.dataDetectorTypes = UIDataDetectorTypeNone;
