@@ -119,6 +119,12 @@
 @property (weak, nonatomic, readonly) JSQMessagesLabel *messageBubbleTopLabel;
 
 /**
+ *  Returns the image view that is pinned just right to the messageBubbleTopLabel.
+ *  This image view is most commonly used to display addition images about the message sender.
+ */
+@property (weak, nonatomic, readonly) UIImageView *messageBubbleTopLabelIconView;
+
+/**
  *  Returns the label that is pinned to the bottom of the cell.
  *  This label is most commonly used to display message delivery status.
  */

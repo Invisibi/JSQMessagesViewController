@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -29,7 +30,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bubble top label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufa-bF-l1Y" userLabel="Bubble top label" customClass="JSQMessagesLabel">
-                        <rect key="frame" x="0.0" y="20" width="320" height="20"/>
+                        <rect key="frame" x="56" y="20" width="104.5" height="20"/>
                         <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="fal-sy-hrK"/>
@@ -130,19 +131,25 @@
                             <action selector="didTapPrimaryButton:" destination="4lh-CK-yVn" eventType="touchUpInside" id="JZ6-m1-7uN"/>
                         </connections>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pSN-Zf-ebr">
+                        <rect key="frame" x="164.5" y="24" width="12.5" height="12.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="pSN-Zf-ebr" secondAttribute="height" multiplier="1:1" id="xR4-nH-HX8"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="nXJ-fm-BVL" firstAttribute="trailing" secondItem="btS-p8-B7Z" secondAttribute="trailing" id="1qH-2m-cd6"/>
                 <constraint firstItem="UPz-5x-c1T" firstAttribute="leading" secondItem="4lh-CK-yVn" secondAttribute="leading" id="54r-MX-MGW"/>
+                <constraint firstItem="pSN-Zf-ebr" firstAttribute="top" secondItem="Ufa-bF-l1Y" secondAttribute="top" constant="4" id="Frr-el-am2"/>
                 <constraint firstAttribute="trailing" secondItem="UPz-5x-c1T" secondAttribute="trailing" id="G3U-h0-DWS"/>
                 <constraint firstAttribute="trailing" secondItem="afj-rd-iNv" secondAttribute="trailing" id="Ka4-Dy-jCS"/>
                 <constraint firstItem="afj-rd-iNv" firstAttribute="leading" secondItem="4lh-CK-yVn" secondAttribute="leading" id="OnD-mZ-QtR"/>
                 <constraint firstItem="nXJ-fm-BVL" firstAttribute="top" secondItem="btS-p8-B7Z" secondAttribute="bottom" constant="-8" id="W8O-73-11K"/>
+                <constraint firstItem="Ufa-bF-l1Y" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" constant="20" id="WiQ-af-Gt2"/>
                 <constraint firstItem="nXJ-fm-BVL" firstAttribute="leading" secondItem="e3v-go-3QS" secondAttribute="trailing" constant="6" id="Y5O-xG-GMS"/>
-                <constraint firstItem="Ufa-bF-l1Y" firstAttribute="leading" secondItem="4lh-CK-yVn" secondAttribute="leading" id="Z5z-m3-8Ne"/>
                 <constraint firstItem="afj-rd-iNv" firstAttribute="top" secondItem="4lh-CK-yVn" secondAttribute="top" id="ZG9-2M-N52"/>
-                <constraint firstAttribute="trailing" secondItem="Ufa-bF-l1Y" secondAttribute="trailing" id="cWQ-1Q-xOA"/>
                 <constraint firstItem="e3v-go-3QS" firstAttribute="trailing" secondItem="btS-p8-B7Z" secondAttribute="trailing" priority="250" id="d0D-rp-WF2"/>
                 <constraint firstItem="UPz-5x-c1T" firstAttribute="top" secondItem="Da1-09-wR4" secondAttribute="bottom" id="dDB-B0-c6J"/>
                 <constraint firstItem="Ufa-bF-l1Y" firstAttribute="top" secondItem="afj-rd-iNv" secondAttribute="bottom" id="i9Y-sV-v6b"/>
@@ -152,6 +159,8 @@
                 <constraint firstAttribute="bottom" secondItem="UPz-5x-c1T" secondAttribute="bottom" id="nsK-Gh-M3Z"/>
                 <constraint firstItem="UPz-5x-c1T" firstAttribute="top" secondItem="btS-p8-B7Z" secondAttribute="bottom" id="s8G-Je-7GA"/>
                 <constraint firstItem="e3v-go-3QS" firstAttribute="top" secondItem="btS-p8-B7Z" secondAttribute="bottom" constant="-8" id="vdY-rX-MMf"/>
+                <constraint firstItem="pSN-Zf-ebr" firstAttribute="leading" secondItem="Ufa-bF-l1Y" secondAttribute="trailing" constant="4" id="w5G-h8-6CP"/>
+                <constraint firstItem="pSN-Zf-ebr" firstAttribute="baseline" secondItem="Ufa-bF-l1Y" secondAttribute="baseline" id="xbZ-zF-zha"/>
             </constraints>
             <size key="customSize" width="317" height="245"/>
             <connections>
@@ -169,6 +178,7 @@
                 <outlet property="messageBubbleImageView" destination="OCS-Fu-acq" id="OuN-5t-30g"/>
                 <outlet property="messageBubbleTopLabel" destination="Ufa-bF-l1Y" id="VtH-te-blR"/>
                 <outlet property="messageBubbleTopLabelHeightConstraint" destination="fal-sy-hrK" id="kgv-NO-Gud"/>
+                <outlet property="messageBubbleTopLabelIconView" destination="pSN-Zf-ebr" id="hmv-mx-PBr"/>
                 <outlet property="primaryButton" destination="nXJ-fm-BVL" id="2W1-oy-fm1"/>
                 <outlet property="secondaryButton" destination="e3v-go-3QS" id="NZg-wg-kIv"/>
                 <outlet property="textView" destination="KYU-B8-cUW" id="1Yv-ln-EUZ"/>
